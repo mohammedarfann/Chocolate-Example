@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aetheria Cacao | Luxury Artisinal Chocolatier</title>
+  <meta name="description" content="Embark on a luxury sensory journey. Indulge in the finest single-origin dark chocolates, hand-crafted truffles, and bespoke flavor symphonies from Aetheria Cacao.">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome for fallback icons if needed, but we will mostly use bespoke inline SVGs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Ambient Golden Dust Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- --- Luxury Header --- -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo" id="header-logo">
+        <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: url(#goldGradient);">
+          <path d="M12 0C10.5 5 6 9 2 12C0.5 13 0 14.5 0 16C0 23.7 5.4 30 12 30C18.6 30 24 23.7 24 16C24 14.5 23.5 13 22 12C18 9 13.5 5 12 0ZM12 26C8.7 26 6 23.3 6 20C6 16.7 8.7 14 12 14C15.3 14 18 16.7 18 20C18 23.3 15.3 26 12 26Z" />
+          <defs>
+            <linearGradient id="goldGradient" x1="0" y1="0" x2="24" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f7f2ed" />
+              <stop offset="50%" stop-color="#d4af37" />
+              <stop offset="100%" stop-color="#8c6e2d" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Aetheria</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#heritage">Origin</a></li>
+        <li><a href="#heritage">Heritage</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#builder">Box Builder</a></li>
+        <li><a href="#craft">The Craft</a></li>
+        <li><a href="#reservation">Boutique</a></li>
+      </ul>
+      
+      <a href="#reservation" class="nav-cta">Reserve Experience</a>
+      
+      <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-canvas-shell">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-overlay">
+        <span class="section-label">Scroll to unveil</span>
+        <h1>The ritual of unwrapping</h1>
+        <p class="serif-text">A cinematic sequence of our signature chocolate reveal.</p>
+      </div>
+      <div class="hero-loading" id="hero-loading">Loading sequence…</div>
+    </div>
+  </section>
+
+  <!-- --- Heritage Section ("The Sacred Cacao") --- -->
+  <section id="heritage" class="heritage">
+    <div class="ambient-glow" style="bottom: 5%; left: 5%;"></div>
+    <div class="container heritage-grid">
+      <div class="heritage-visual reveal-left">
+        <div class="heritage-img-wrapper">
+          <img src="assets/cacao_pod.png" alt="Halved Cacao Pod" class="heritage-img">
+        </div>
+      </div>
+      
+      <div class="heritage-details reveal-right">
+        <span class="section-label">Origin & Sourcing</span>
+        <h2 class="section-title" style="text-align: left; margin: 0 0 1.5rem 0;">The Sacred Soil</h2>
+        <p class="serif-text">
+          Our journey begins in the micro-climate volcanic shadow of Mount Tsaratanana in Madagascar. The mineral-dense soil feeds our criollo trees—the rarest variety of cacao in the world, yielding only 5% of global harvests.
+        </p>
+        <blockquote class="heritage-quote">
+          "To understand cacao is to understand the breath of the earth. We do not extract flavor; we cultivate its release."
+        </blockquote>
+        <p class="serif-text">
+          Each single-origin pod is hand-harvested by local farming cooperatives at the exact moment of ripeness. Fermented underneath organic banana leaves, our beans develop complex floral notes before embarking on their journey to our Swiss laboratory.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- The Collection ("The Symphony of Flavors") --- -->
+  <section id="collection" class="collection">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Les Chefs-D'œuvre</span>
+        <h2 class="section-title">The Grand Collection</h2>
+        <p class="serif-text">Discover our core collection of celestial chocolate truffles. Click on any creation to review its aromatic profile and tasting notes.</p>
+      </div>
+      
+      <div class="collection-grid">
+        <!-- Card 1: Obsidian 85 -->
+        <div class="collection-card reveal delay-1" data-id="obsidian">
+          <span class="product-cocoa">85% Cocoa | Single-Origin Madagascar</span>
+          <div class="product-img-container">
+            <img src="assets/truffle_obsidian.png" alt="Obsidian Dark Truffle" class="product-img">
+          </div>
+          <h3 class="product-title">Obsidian 85</h3>
+          <p class="product-excerpt">An intense dark truffle infused with roasted coffee notes, finished with a delicate dusting of black lava sea salt and gold leaf.</p>
+          <div class="product-footer">
+            <span class="product-price">$6.50 / pc</span>
+            <button class="btn-card">Review Profile</button>
+          </div>
+        </div>
+
+        <!-- Card 2: Aetheria Ruby Rose -->
+        <div class="collection-card reveal delay-2" data-id="ruby_rose">
+          <span class="product-cocoa">47% Cocoa | Ecuadorian Ruby Cacao</span>
+          <div class="product-img-container">
+            <img src="assets/truffle_rose.png" alt="Ruby Rose Truffle" class="product-img">
+          </div>
+          <h3 class="product-title">Ruby Rose</h3>
+          <p class="product-excerpt">Naturally pink ruby chocolate sphere enveloping a liquid heart of Bulgarian rosewater and freeze-dried mountain raspberries.</p>
+          <div class="product-footer">
+            <span class="product-price">$7.00 / pc</span>
+            <button class="btn-card">Review Profile</button>
+          </div>
+        </div>
+
+        <!-- Card 3: Saffron Gold -->
+        <div class="collection-card reveal delay-3" data-id="saffron_gold">
+          <span class="product-cocoa">38% Cocoa | Swiss Cream & White Chocolate</span>
+          <div class="product-img-container">
+            <img src="assets/truffle_gold.png" alt="Saffron Gold Truffle" class="product-img">
+          </div>
+          <h3 class="product-title">Saffron Gold</h3>
+          <p class="product-excerpt">Velvety white chocolate infused with rare Kashmir saffron, topped with a micro-thin brush stroke of 24k edible gold paint.</p>
+          <div class="product-footer">
+            <span class="product-price">$8.00 / pc</span>
+            <button class="btn-card">Review Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Box Builder ("Curate Your Symphony") --- -->
+  <section id="builder" class="builder">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Bespoke Atelier</span>
+        <h2 class="section-title">Curate Your Symphony</h2>
+        <p class="serif-text">Build your personal 4-slot presentation box. Select from our menu to fill the slots, and witness your customized box's aromatic flavor profile adjust in real time.</p>
+      </div>
+      
+      <div class="builder-layout reveal">
+        <div class="builder-left">
+          
+          <!-- Select Truffle Menu -->
+          <div class="builder-selection">
+            <h3 class="selection-title">Artisanal Truffle Menu</h3>
+            <div class="selection-grid">
+              
+              <!-- Obsidian Menu Item -->
+              <div class="selection-item" data-id="obsidian" data-name="Obsidian 85" data-cocoa="85" data-sweetness="20" data-bitterness="90" data-fruitiness="40" data-spiciness="30" data-img="assets/truffle_obsidian.png">
+                <div class="item-thumbnail-container">
+                  <img src="assets/truffle_obsidian.png" alt="Obsidian" class="item-thumbnail">
+                </div>
+                <div class="item-info">
+                  <span class="item-name">Obsidian 85</span>
+                  <span class="item-desc">Dark, coffee, sea salt</span>
+                </div>
+              </div>
+              
+              <!-- Ruby Rose Menu Item -->
+              <div class="selection-item" data-id="ruby_rose" data-name="Ruby Rose" data-cocoa="47" data-sweetness="65" data-bitterness="30" data-fruitiness="95" data-spiciness="10" data-img="assets/truffle_rose.png">
+                <div class="item-thumbnail-container">
+                  <img src="assets/truffle_rose.png" alt="Ruby Rose" class="item-thumbnail">
+                </div>
+                <div class="item-info">
+                  <span class="item-name">Ruby Rose</span>
+                  <span class="item-desc">Ruby, raspberry, rose</span>
+                </div>
+              </div>
+
+              <!-- Saffron Gold Menu Item -->
+              <div class="selection-item" data-id="saffron_gold" data-name="Saffron Gold" data-cocoa="38" data-sweetness="80" data-bitterness="15" data-fruitiness="20" data-spiciness="70" data-img="assets/truffle_gold.png">
+                <div class="item-thumbnail-container">
+                  <img src="assets/truffle_gold.png" alt="Saffron Gold" class="item-thumbnail">
+                </div>
+                <div class="item-info">
+                  <span class="item-name">Saffron Gold</span>
+                  <span class="item-desc">White, saffron, cardamon</span>
+                </div>
+              </div>
+
+              <!-- Espresso Dark Menu Item (Reuses Obsidian image with color filters applied in app.js or CSS) -->
+              <div class="selection-item" data-id="espresso_dark" data-name="Espresso Core" data-cocoa="75" data-sweetness="35" data-bitterness="80" data-fruitiness="30" data-spiciness="40" data-img="assets/truffle_obsidian.png">
+                <div class="item-thumbnail-container" style="filter: brightness(0.6) sepia(0.3);">
+                  <img src="assets/truffle_obsidian.png" alt="Espresso Core" class="item-thumbnail">
+                </div>
+                <div class="item-info">
+                  <span class="item-name">Espresso Core</span>
+                  <span class="item-desc">Dark, espresso bean</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <!-- Box Stats Tracker -->
+          <div class="builder-stats">
+            <h3 class="stats-title">Aromatic Flavor Profile</h3>
+            <div class="stats-bars">
+              
+              <!-- Cocoa -->
+              <div class="stat-row">
+                <div class="stat-labels">
+                  <span class="stat-name">Average Cocoa Content</span>
+                  <span class="stat-val" id="stat-cocoa">0%</span>
+                </div>
+                <div class="stat-bar-outer">
+                  <div class="stat-bar-inner" id="bar-cocoa"></div>
+                </div>
+              </div>
+
+              <!-- Sweetness -->
+              <div class="stat-row">
+                <div class="stat-labels">
+                  <span class="stat-name">Sweetness</span>
+                  <span class="stat-val" id="stat-sweetness">0%</span>
+                </div>
+                <div class="stat-bar-outer">
+                  <div class="stat-bar-inner" id="bar-sweetness"></div>
+                </div>
+              </div>
+
+              <!-- Bitterness -->
+              <div class="stat-row">
+                <div class="stat-labels">
+                  <span class="stat-name">Bitterness</span>
+                  <span class="stat-val" id="stat-bitterness">0%</span>
+                </div>
+                <div class="stat-bar-outer">
+                  <div class="stat-bar-inner" id="bar-bitterness"></div>
+                </div>
+              </div>
+
+              <!-- Fruitiness -->
+              <div class="stat-row">
+                <div class="stat-labels">
+                  <span class="stat-name">Fruitiness</span>
+                  <span class="stat-val" id="stat-fruitiness">0%</span>
+                </div>
+                <div class="stat-bar-outer">
+                  <div class="stat-bar-inner" id="bar-fruitiness"></div>
+                </div>
+              </div>
+
+              <!-- Spiciness -->
+              <div class="stat-row">
+                <div class="stat-labels">
+                  <span class="stat-name">Spiciness & Warmth</span>
+                  <span class="stat-val" id="stat-spiciness">0%</span>
+                </div>
+                <div class="stat-bar-outer">
+                  <div class="stat-bar-inner" id="bar-spiciness"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Interactive Box -->
+        <div class="builder-right">
+          <div class="box-canvas-container">
+            <div class="box-slots-grid">
+              
+              <!-- Slot 1 -->
+              <div class="box-slot" data-slot="0">
+                <div class="slot-placeholder">
+                  <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                  <span>Slot I</span>
+                </div>
+              </div>
+
+              <!-- Slot 2 -->
+              <div class="box-slot" data-slot="1">
+                <div class="slot-placeholder">
+                  <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                  <span>Slot II</span>
+                </div>
+              </div>
+
+              <!-- Slot 3 -->
+              <div class="box-slot" data-slot="2">
+                <div class="slot-placeholder">
+                  <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                  <span>Slot III</span>
+                </div>
+              </div>
+
+              <!-- Slot 4 -->
+              <div class="box-slot" data-slot="3">
+                <div class="slot-placeholder">
+                  <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                  <span>Slot IV</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="box-summary">
+            <span class="box-count" id="builder-count">Box Empty (0/4 filled)</span>
+            <button class="btn-builder-order" id="btn-order-box" disabled>Reserve My Custom Box</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- The Craft ("Tempus Cacao") --- -->
+  <section id="craft" class="craft">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">L'Orfèvrerie</span>
+        <h2 class="section-title">The Art of Tempus Cacao</h2>
+        <p class="serif-text">Creating chocolates of this magnitude requires a slow, ritualistic alchemy where temperature and time align perfectly.</p>
+      </div>
+      
+      <div class="craft-timeline clearfix">
+        
+        <!-- Step 1: Slow Fire Roasting -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="craft-img-container">
+              <img src="assets/roasting_beans.png" alt="Roasting cacao beans" class="craft-img">
+            </div>
+            <span class="timeline-step">Stage 01</span>
+            <h3 class="timeline-title">Slow Fire Roasting</h3>
+            <p class="timeline-text">
+              We roast our beans over volcanic stone ovens at gentle temperatures. This slow, 4-hour procedure preserves key flavor precursors and yields rich floral notes that standard commercial roasting destroys.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2: 72-Hour Aerated Conching -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="craft-img-container">
+              <!-- Reusing cacao pod with a warm tint to look like conching/paste -->
+              <img src="assets/cacao_pod.png" alt="Conching paste" class="craft-img" style="filter: sepia(0.5) brightness(0.6) hue-rotate(-30deg);">
+            </div>
+            <span class="timeline-step">Stage 02</span>
+            <h3 class="timeline-title">72-Hour Conching</h3>
+            <p class="timeline-text">
+              Our chocolate paste is conched in traditional granite rollers for 72 continuous hours. Oxygen streams constantly bubble through, vaporizing unwanted bitter acidity and aerating the chocolate until it achieves a perfect, velvety mouthfeel.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: Crystal-V Tempering -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="craft-img-container">
+              <!-- Reusing floating bar with dark tint to look like tempered chocolate -->
+              <img src="assets/hero_chocolate.png" alt="Tempering chocolate" class="craft-img" style="filter: grayscale(40%) brightness(0.5); object-fit: cover;">
+            </div>
+            <span class="timeline-step">Stage 03</span>
+            <h3 class="timeline-title">Crystal-V Tempering</h3>
+            <p class="timeline-text">
+              To secure the signature glossy look and clean snap, we temperature-temper our chocolate in three stages, forcing the cacao butter to crystallize exclusively into Type-V stable crystals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4: Golden Detailing -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-node"></div>
+          <div class="timeline-content">
+            <div class="craft-img-container">
+              <!-- Reusing truffle gold image -->
+              <img src="assets/truffle_gold.png" alt="Hand painting gold" class="craft-img">
+            </div>
+            <span class="timeline-step">Stage 04</span>
+            <h3 class="timeline-title">Astronomical Detailing</h3>
+            <p class="timeline-text">
+              Every single truffle is finalized by hand. Whether receiving a brushing of edible 24k gold, a dusting of black sea salt, or a spray of wild raspberry liquor, our chocolatiers finish each chocolate as a standalone masterpiece.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Boutique Reservation --- -->
+  <section id="reservation" class="reservation">
+    <div class="container reservation-container">
+      
+      <div class="reservation-info reveal-left">
+        <span class="section-label">L'Atelier Privé</span>
+        <h2 class="section-title" style="text-align: left; margin: 0 0 1.5rem 0;">Sensory Tasting Salon</h2>
+        <p class="serif-text">
+          Join our master chocolatier at the Aetheria Salon in Geneva for a private, multi-sensory tasting course. Uncover hidden flavor notes in our single-origin chocolates, paired with vintage Grand Cru wines.
+        </p>
+        
+        <div class="reservation-details-list">
+          <!-- Detail 1 -->
+          <div class="res-detail-item">
+            <div class="res-icon"><i class="fa-solid fa-map-pin"></i></div>
+            <div class="res-info-text">
+              <h4>The Geneva Boutique</h4>
+              <p>Rue du Rhône 42, 1204 Genève, Switzerland</p>
+            </div>
+          </div>
+          <!-- Detail 2 -->
+          <div class="res-detail-item">
+            <div class="res-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="res-info-text">
+              <h4>Exclusive Hours</h4>
+              <p>Thursdays - Saturdays | 17:00 and 20:00 sessions</p>
+            </div>
+          </div>
+          <!-- Detail 3 -->
+          <div class="res-detail-item">
+            <div class="res-icon"><i class="fa-solid fa-wine-glass"></i></div>
+            <div class="res-info-text">
+              <h4>The Pairing Flight</h4>
+              <p>Includes 6 chocolates, 3 grand cru wines, and 1 rare single-origin raw roast</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reservation-form-wrapper reveal-right">
+        <form class="reservation-form" id="res-booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-name">Connoisseur Name</label>
+              <input type="text" id="res-name" placeholder="E.g., Charlotte Laurent" required>
+            </div>
+            <div class="form-group">
+              <label for="res-email">Email Address</label>
+              <input type="email" id="res-email" placeholder="E.g., charlotte@domain.com" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date">Select Date</label>
+              <input type="date" id="res-date" required>
+            </div>
+            <div class="form-group">
+              <label for="res-session">Preferred Session</label>
+              <select id="res-session" required>
+                <option value="" disabled selected>Select session time</option>
+                <option value="17:00">Sunset Flight (17:00)</option>
+                <option value="20:00">Nocturnal Pairing (20:00)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="res-guests">Number of Guests</label>
+            <select id="res-guests" required>
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="private">Private Salon (5-10 Guests)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="res-notes">Dietary Notes / Requests</label>
+            <textarea id="res-notes" rows="3" placeholder="E.g., Nut allergies, vegan alternatives, etc."></textarea>
+          </div>
+          
+          <button type="submit" class="btn-form">Request Salon Booking</button>
+        </form>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- --- Footer --- -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <a href="#" class="logo">
+            <svg width="20" height="25" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: var(--gold-primary);">
+              <path d="M12 0C10.5 5 6 9 2 12C0.5 13 0 14.5 0 16C0 23.7 5.4 30 12 30C18.6 30 24 23.7 24 16C24 14.5 23.5 13 22 12C18 9 13.5 5 12 0ZM12 26C8.7 26 6 23.3 6 20C6 16.7 8.7 14 12 14C15.3 14 18 16.7 18 20C18 23.3 15.3 26 12 26Z" />
+            </svg>
+            <span style="background: none; -webkit-text-fill-color: initial; color: var(--text-primary);">Aetheria</span>
+          </a>
+          <p>
+            Alchemizing earth, water, and fire into pure, edible celestial art. Our boutique houses offer private salons in Geneva, London, and Tokyo.
+          </p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Boutique Salons</h3>
+          <ul class="footer-links">
+            <li><a href="#reservation">Geneva — Rue du Rhône</a></li>
+            <li><a href="#">London — Mayfair</a></li>
+            <li><a href="#">Tokyo — Ginza</a></li>
+            <li><a href="#">Zurich — Bahnhofstrasse</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="#heritage">Our Sourcing</a></li>
+            <li><a href="#collection">Product Catalog</a></li>
+            <li><a href="#builder">Flavor Workshop</a></li>
+            <li><a href="#craft">Art of Conching</a></li>
+            <li><a href="#">Connoisseurs Circle</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p>Join the circle of taste. Receive first invitations to seasonal micro-batches and boutique tastings.</p>
+          <form class="newsletter-form" id="newsletter-subscription-form">
+            <input type="email" placeholder="Your Email Address" aria-label="Newsletter Email" required>
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aetheria Cacao S.A. All rights reserved. Crafted by hand.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- Product Detail Modal Overlay --- -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-img-container">
+        <img src="" alt="" class="modal-img" id="modal-product-img">
+      </div>
+      
+      <div class="modal-info">
+        <span class="modal-cocoa" id="modal-product-cocoa"></span>
+        <h2 class="modal-title" id="modal-product-title"></h2>
+        <span class="modal-price" id="modal-product-price"></span>
+        <p class="modal-desc" id="modal-product-desc"></p>
+        
+        <h4 class="modal-section-title">Flavor Architecture</h4>
+        <div class="stats-bars" style="margin-bottom: 1rem;">
+          <div class="stat-row">
+            <div class="stat-labels">
+              <span class="stat-name" style="font-size: 0.65rem;">Bitterness</span>
+              <span class="stat-val" id="modal-stat-bitterness" style="font-size: 0.65rem;">0%</span>
+            </div>
+            <div class="stat-bar-outer" style="height: 3px;"><div class="stat-bar-inner" id="modal-bar-bitterness"></div></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-labels">
+              <span class="stat-name" style="font-size: 0.65rem;">Sweetness</span>
+              <span class="stat-val" id="modal-stat-sweetness" style="font-size: 0.65rem;">0%</span>
+            </div>
+            <div class="stat-bar-outer" style="height: 3px;"><div class="stat-bar-inner" id="modal-bar-sweetness"></div></div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-labels">
+              <span class="stat-name" style="font-size: 0.65rem;">Spiciness</span>
+              <span class="stat-val" id="modal-stat-spiciness" style="font-size: 0.65rem;">0%</span>
+            </div>
+            <div class="stat-bar-outer" style="height: 3px;"><div class="stat-bar-inner" id="modal-bar-spiciness"></div></div>
+          </div>
+        </div>
+
+        <h4 class="modal-section-title">Sommelier Recommendation</h4>
+        <p class="modal-pairing" id="modal-product-pairing"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- Toast Notification Banner --- -->
+  <div class="toast" id="system-toast">Box Reserved Successfully. Welcome to the Circle.</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
